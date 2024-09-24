@@ -8,10 +8,10 @@ const icon = document.getElementById('icon').querySelector('img'); // Select the
 playPauseButton.addEventListener('click', () => {
     if (audioPlayer.paused) {
         audioPlayer.play();
-        icon.src = "../icons/pause.gif"; // Change to pause icon
+        icon.src = "./icons/pause.gif"; // Change to pause icon
     } else {
         audioPlayer.pause();
-        icon.src = "../icons/play.gif"; // Change back to play icon
+        icon.src = "./icons/play.gif"; // Change back to play icon
     }
 });
 
@@ -23,10 +23,10 @@ const icon1 = document.getElementById('icon1').querySelector('img'); // Select t
 playPauseButton1.addEventListener('click', () => {
     if (audioPlayer1.paused) {
         audioPlayer1.play();
-        icon1.src = "../icons/pause.gif"; // Change to pause icon
+        icon1.src = "./icons/pause.gif"; // Change to pause icon
     } else {
         audioPlayer1.pause();
-        icon1.src = "../icons/play.gif"; // Change back to play icon
+        icon1.src = "./icons/play.gif"; // Change back to play icon
     }
 });
 
