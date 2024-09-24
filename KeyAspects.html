@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Aspects of Technology in Education</title>
+    <link rel="stylesheet" href="output.css"> <!-- Include Tailwind CSS -->
+    <style>
+        .bg-complex {
+            background-image: url('../img/tech2.jpg');
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-complex h-screen flex items-center justify-center relative bg-cover">
+
+    <div class="absolute inset-0 bg-black bg-opacity-80 z-10 flex flex-col items-center justify-center">
+        <a href="index.html" class="bg-purple-600 text-white text-xl sm:text-2xl font-semibold py-2 px-4 rounded-md shadow hover:bg-purple-700 transition duration-300 mb-4">
+            &lt; Click me to go back
+        </a>
+        <div class="container w-full max-w-4xl p-8 sm:p-10 rounded-lg border-4 border-purple-600">
+            <h1 class="font-bold text-center text-white text-2xl sm:text-3xl border-b-2 border-purple-400 mb-4">Key Aspects of Technology in Education</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-4 cursor-pointer bg-purple-600 rounded-lg hover:bg-purple-500" onclick="toggleText('Mobile')">Mobile Learning (m-Learning)</div>
+                <div class="p-4 cursor-pointer bg-purple-600 rounded-lg hover:bg-purple-500" onclick="toggleText('Social')">Social Media in Education</div>
+                <div class="p-4 cursor-pointer bg-purple-600 rounded-lg hover:bg-purple-500" onclick="toggleText('Learning')">Learning Management Systems (LMS)</div>
+                <div class="p-4 cursor-pointer bg-purple-600 rounded-lg hover:bg-purple-500" onclick="toggleText('Cloud')">Cloud Computing</div>
+                <div class="p-4 cursor-pointer bg-purple-600 rounded-lg hover:bg-purple-500" onclick="toggleText('Assistive')">Assistive Technology</div>
+                <div class="p-4 cursor-pointer bg-purple-600 rounded-lg hover:bg-purple-500" onclick="toggleText('Cybersecurity')">Cybersecurity and Online Safety</div>
+            </div>
+
+            <div class="mt-4 border-2 border-purple-800 p-4 text-gray-300 flex flex-row">
+                <div class="flex-1 text-section mr-4"> <!-- Space between text and images -->
+                    <p class="mb-2 text-white">Click a topic to learn more:</p>
+                    
+                    <p id="Mobile" class="hidden text-white mt-1">Examine how smartphones and tablets enable learning on-the-go, allowing students to access educational materials anytime and anywhere.</p>
+                    <p id="Social" class="hidden text-white mt-1">Discuss how platforms like Twitter, Facebook, and educational forums facilitate collaboration, information sharing, and community building among students and educators.</p>
+                    <p id="Learning" class="hidden text-white mt-1">Analyze how LMS platforms streamline course management, track student progress, and facilitate communication between instructors and learners.</p>
+                    <p id="Cloud" class="hidden text-white mt-1">Highlight the role of cloud technology in providing scalable storage solutions and collaborative tools for students and teachers.</p>
+                    <p id="Assistive" class="hidden text-white mt-1">Explore how technology aids students with disabilities by providing tailored learning experiences and tools for accessibility.</p>
+                    <p id="Cybersecurity" class="hidden text-white mt-1">Discuss the importance of protecting student data and ensuring safe online learning environments amidst growing cyber threats.</p>
+                </div>
+
+                <!-- Image Display Div -->
+                <div class="flex-1 image-section flex flex-col items-center">
+                    <img id="Mobile-img" src="../img/mobile.jpg" alt="Mobile Learning" class="hidden max-w-52 rounded-md">
+                    <img id="Social-img" src="../img/social.jpg" alt="Social Media in Education" class="hidden max-w-52 rounded-md">
+                    <img id="Learning-img" src="../img/learning.jpg" alt="Learning Management Systems" class="hidden max-w-52 rounded-md">
+                    <img id="Cloud-img" src="../img/cloud.jpg" alt="Cloud Computing" class="hidden max-w-52 rounded-md">
+                    <img id="Assistive-img" src="../img/assistive.jpg" alt="Assistive Technology" class="hidden max-w-52 rounded-md">
+                    <img id="Cybersecurity-img" src="../img/cyber.jpg" alt="Cybersecurity and Online Safety" class="hidden max-w-52 rounded-md">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleText(id) {
+            // Hide all paragraphs and images first
+            const paragraphs = document.querySelectorAll('.text-section p');
+            const images = document.querySelectorAll('.image-section img');
+
+            // Check if the currently clicked element is already visible
+            const currentParagraph = document.getElementById(id);
+            const currentImage = document.getElementById(id + '-img');
+
+            const isCurrentlyVisible = !currentParagraph.classList.contains('hidden');
+
+            // Hide all paragraphs and images
+            paragraphs.forEach(paragraph => {
+                paragraph.classList.add('hidden');
+            });
+            images.forEach(image => {
+                image.classList.add('hidden');
+            });
+
+            // If the current paragraph is not visible, show it along with the image
+            if (!isCurrentlyVisible) {
+                currentParagraph.classList.remove('hidden');
+                currentImage.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
